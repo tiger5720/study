@@ -105,3 +105,34 @@ public class ReviewDemo01 {
 //
 //    }
 //}
+
+
+import java.util.Scanner;
+// v0.6
+public class ReviewDemo01 {
+    public static void main(String[] args) {
+        // 소수 : 1과 자기자신외에는 나누어 떨어지지 않는 수
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        //int cnt = 0;
+        boolean isPrime = true;  //is가 들어가면 boolean Type (논리형)
+
+        int k=2;
+        while(k<number)
+        {
+            if(number % k ==0)  //입력된 수를 k로 나눌때 나머지 0, 즉 약수
+            {
+                isPrime = false;
+                break;  //반복문 횟수 줄임, 첫번째 약수가 발견되면  for문 탈출
+            }
+            System.out.println(k);
+            k++;
+        }
+        System.out.println(number + (isPrime ? "은(는) 소수!" : "은(는) 소수가 아닙니다!" )); //삼항연산자 (변수) ? true : false
+//        if(isPrime)  // isPrime 값이 true 면 소수  boolean type은 코드 간소화 가능 true 안넣고 isPrime == true
+//            System.out.println(number+"은(는) 소수!");
+//        else
+//            System.out.println(number+"은(는) 소수가 아닙니다!");
+
+    }
+}
